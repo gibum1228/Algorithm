@@ -1,4 +1,9 @@
-// 201814066 김기범
+/*
+ * 파일명: ArrayCompare.java
+ * 작성자: 김기범
+ * 작성일: 2020.03.26.
+ * 내용: 두 개의 양의 정수 집합이 동일한 지 비교하는 프로그램이다.
+ */
 package hw;
 
 import java.util.Scanner;
@@ -8,7 +13,7 @@ public class ArrayCompare {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int a[] = new int [100]; // 크기가 100인 두 정수 배열 생성
+		int a[] = new int [100]; // 최대 크기가 100인 두 정수 배열 생성
 		int b[] = new int [100];
 		int aSize = 100, bSize = 100; // 실제 입력 받은 배열 크기를 알기 위한 변수
 		boolean same = false; // 두 원소를 비교했을 때 같으면 true, 같지 않으면 false
@@ -43,7 +48,7 @@ public class ArrayCompare {
 				same = false;
 				for(int l = 0; l < bSize; l++) { // 두 집합의 원소를 하나 하나 비교하기
 					if(a[k] == b[l]) { // 같으면 same을 true로 바꾸고 다음 원소를 기준으로 비교하기
-						same = true;
+						same = true; // 두 배열이 같으면 마지막 same은 true 값임
 						break;
 					}
 				}
