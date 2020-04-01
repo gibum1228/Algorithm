@@ -41,8 +41,10 @@ public class ArrayCompare {
 			}
 		}
 		
-		// 두 집합의 크기가 무조건 같다고는 명시가 되어 있지 않음
-		if(aSize != bSize) { // 두 집합의 크기가 다를 경우
+		if(aSize == 0 && bSize == 0) { // 두 집합이 공집합일 경우
+			same = true;
+		}else if(aSize != bSize) { // 두 집합의 크기가 다를 경우
+			
 		}else {
 			for(int k = 0; k < aSize; k++) { // 두 집합의 크기가 같을 경우 원소 비교
 				same = false;
