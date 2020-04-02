@@ -28,11 +28,6 @@ public class StudentArray {
 			studentList[i] = new Student(name, sNum, grade);
 		}
 		
-		// 학생 정보 출력
-		for(int j = 0; j < size; j++) {
-			studentList[j].print();
-		}
-		
 		// 학생 평균 구하기
 		for(int k = 0; k < size; k++) {
 			average = average + studentList[k].getGrade();
