@@ -16,9 +16,9 @@ public class StudentSelectionSort {
 		System.out.println("hw3_2: 김기범\n");
 		System.out.print("학생 수 입력: ");
 		int count = sc.nextInt();
-		StudentA[] studentList = new StudentA [count];
-		StudentA tmp = new StudentA(); // 교환하기 위한 객체
-		int min; // 최솟값이 있는 인덱스
+		StudentN[] studentList = new StudentN [count];
+		StudentN tmp = new StudentN(); // 교환하기 위한 객체
+		int min; // 최솟값이 있는 인덱스를 담기 위한 변수
 		
 		System.out.println("\n" + count + "명의 학생 정보를 입력하세요:");
 		for(int i = 0; i < count; i++) {
@@ -26,22 +26,22 @@ public class StudentSelectionSort {
 			int sNum = sc.nextInt();
 			double grade = sc.nextDouble();
 			
-			studentList[i] = new StudentA(name, sNum, grade);
+			studentList[i] = new StudentN(name, sNum, grade);
 		}
 		
 		for(int j = 0; j < count - 1; j++) {
-			min = j;
+			min = j; // 제일 왼쪽 값을 최소값으로 지정
 			for(int k = j + 1; k < count; k++) { // 순번이 빠른 이름의 인덱스 구하기(최소값 구하기)
-				if(studentList[min].getName().compareTo(studentList[k].getName()) > 0) {
+				if(studentList[min].getName().compareTo(studentList[k].getName()) >= 0) {
 					min = k;
 				}
 			}
-			tmp = studentList[j]; // 오름차순으로 정렬
+			tmp = studentList[j]; // 오름차순으로 정렬(스왑핑)
 			studentList[j] = studentList[min];
 			studentList[min] = tmp;
 		}
 		
-		System.out.println("성명 오름차순 결과 =");
+		System.out.println("\n성명 오름차순 결과 =");
 		for(int l = 0; l < count; l++) {
 			studentList[l].print();
 		}
@@ -51,15 +51,15 @@ public class StudentSelectionSort {
 
 }
 
-class StudentA{
+class StudentN{
 	private String name; // 이름
 	private int sNum; // 학번
 	private double grade; // 성적
 	
 	//생성자
-	public StudentA() {
+	public StudentN() {
 	}
-	public StudentA(String n, int num, double g) {
+	public StudentN(String n, int num, double g) {
 		this.name = n;
 		this.sNum = num;
 		this.grade = g;
